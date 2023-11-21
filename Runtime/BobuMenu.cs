@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.Networking;
@@ -124,5 +123,68 @@ public class MenuTutorial : BobuMenuBase
 
         if (GUILayout.Button("Import TutorialDragAnimation"))
             ImportScript("TutorialAnimation.cs");
+    }
+}
+
+public class MenuTimeCounter : BobuMenuBase
+{
+    [MenuItem("Window/BobuMenu/Scripts/Timer")]
+    public static void ShowWindow()
+    {
+        GetWindow<MenuTimeCounter>("Import Scripts");
+    }
+
+    protected override string Owner => "kidstellar";
+    protected override string Repo => "BobuScripts";
+
+    private void OnGUI()
+    {
+        GUILayout.Label("Timer");
+
+        if (GUILayout.Button("Import MinuteConverter"))
+            ImportScript("TimeCounter.cs");
+    }
+}
+
+public class MenuLine : BobuMenuBase
+{
+    [MenuItem("Window/BobuMenu/Scripts/Line")]
+    public static void ShowWindow()
+    {
+        GetWindow<MenuLine>("Import Scripts");
+    }
+
+    protected override string Owner => "kidstellar";
+    protected override string Repo => "BobuScripts";
+
+    private void OnGUI()
+    {
+        GUILayout.Label("LineDrawer");
+
+        if (GUILayout.Button("Import LineDrawer"))
+            ImportScript("LineDrawer.cs");
+    }
+}
+
+public class MenuDragDrop : BobuMenuBase
+{
+    [MenuItem("Window/BobuMenu/Scripts/DragDropElements")]
+    public static void ShowWindow()
+    {
+        GetWindow<MenuDragDrop>("Import Scripts");
+    }
+
+    protected override string Owner => "kidstellar";
+    protected override string Repo => "BobuScripts";
+
+    private void OnGUI()
+    {
+        GUILayout.Label("DragDropElements");
+
+        if (GUILayout.Button("Import DragDrop"))
+            ImportScript("DragDrop.cs");
+
+        if (GUILayout.Button("Import Slots"))
+            ImportScript("Slots.cs");
     }
 }
