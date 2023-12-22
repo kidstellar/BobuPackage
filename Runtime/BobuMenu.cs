@@ -1,10 +1,10 @@
 using System.Collections;
+using System;
 using UnityEngine;
-#if UNITY_EDITOR
 using UnityEditor;
-#endif
 using UnityEngine.Networking;
 
+#if UNITY_EDITOR
 public abstract class BobuMenuBase : EditorWindow
 {
     protected abstract string Owner { get; }
@@ -38,7 +38,9 @@ public abstract class BobuMenuBase : EditorWindow
         };
     }
 }
+#endif
 
+#if UNITY_EDITOR
 public class MenuManagers : BobuMenuBase
 {
     [MenuItem("Window/BobuMenu/Scripts/Managers")]
@@ -67,7 +69,9 @@ public class MenuManagers : BobuMenuBase
             ImportScript("AudioManager.cs");
     }
 }
+#endif
 
+#if UNITY_EDITOR
 public class MenuControllers : BobuMenuBase
 {
     [MenuItem("Window/BobuMenu/Scripts/Controllers")]
@@ -87,7 +91,9 @@ public class MenuControllers : BobuMenuBase
             ImportScript("LevelController.cs");
     }
 }
+#endif
 
+#if UNITY_EDITOR
 public class MenuAnchor : BobuMenuBase
 {
     [MenuItem("Window/BobuMenu/Scripts/Anchor")]
@@ -99,6 +105,7 @@ public class MenuAnchor : BobuMenuBase
     protected override string Owner => "kidstellar";
     protected override string Repo => "BobuScripts";
 
+
     private void OnGUI()
     {
         GUILayout.Label("Anchor");
@@ -107,7 +114,9 @@ public class MenuAnchor : BobuMenuBase
             ImportScript("AnchorGameObject.cs");
     }
 }
+#endif
 
+#if UNITY_EDITOR
 public class MenuTutorial : BobuMenuBase
 {
     [MenuItem("Window/BobuMenu/Scripts/Tutorial")]
@@ -119,6 +128,7 @@ public class MenuTutorial : BobuMenuBase
     protected override string Owner => "kidstellar";
     protected override string Repo => "BobuScripts";
 
+
     private void OnGUI()
     {
         GUILayout.Label("Tutorial");
@@ -127,7 +137,9 @@ public class MenuTutorial : BobuMenuBase
             ImportScript("TutorialAnimation.cs");
     }
 }
+#endif
 
+#if UNITY_EDITOR
 public class MenuTimeCounter : BobuMenuBase
 {
     [MenuItem("Window/BobuMenu/Scripts/Timer")]
@@ -139,6 +151,7 @@ public class MenuTimeCounter : BobuMenuBase
     protected override string Owner => "kidstellar";
     protected override string Repo => "BobuScripts";
 
+
     private void OnGUI()
     {
         GUILayout.Label("Timer");
@@ -147,7 +160,9 @@ public class MenuTimeCounter : BobuMenuBase
             ImportScript("TimeCounter.cs");
     }
 }
+#endif
 
+#if UNITY_EDITOR
 public class MenuLine : BobuMenuBase
 {
     [MenuItem("Window/BobuMenu/Scripts/Line")]
@@ -159,6 +174,7 @@ public class MenuLine : BobuMenuBase
     protected override string Owner => "kidstellar";
     protected override string Repo => "BobuScripts";
 
+
     private void OnGUI()
     {
         GUILayout.Label("LineDrawer");
@@ -167,7 +183,9 @@ public class MenuLine : BobuMenuBase
             ImportScript("LineDrawer.cs");
     }
 }
+#endif
 
+#if UNITY_EDITOR
 public class MenuDragDrop : BobuMenuBase
 {
     [MenuItem("Window/BobuMenu/Scripts/DragDropElements")]
@@ -178,6 +196,7 @@ public class MenuDragDrop : BobuMenuBase
 
     protected override string Owner => "kidstellar";
     protected override string Repo => "BobuScripts";
+
 
     private void OnGUI()
     {
@@ -190,3 +209,4 @@ public class MenuDragDrop : BobuMenuBase
             ImportScript("Slots.cs");
     }
 }
+#endif
